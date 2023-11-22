@@ -1,27 +1,44 @@
-# Xray
+# Brain Tumor Detection Front Office
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+This project is the front office part of a system that help to detect tumor
+with the xray of brain
 
-## Development server
+## Overview
+Welcome to the Brain Tumor Detection Front Office project! This web-based application serves as the user interface for a system designed to assist in the detection of brain tumors using X-ray images of the brain.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Upload X-ray Images:** Users can easily upload X-ray images of the brain for analysis.
+- **Automated Tumor Detection:** The system employs machine learning algorithms to automatically detect potential brain tumors in the uploaded images (link to repo : ....).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+As it's a Angular app, it's pretty simple and the same as all angular app with libraries:
 
-## Running unit tests
+- NodeJS (version >= 16)
+- Angular (version >= 14)
+- Uploadcare (version 0.30.0)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can install all required library using npm
 
-## Running end-to-end tests
+```
+    npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Getting Started
 
-## Further help
+1. Clone the repository
+```
+    git clone https://github.com/zidanetech brain-tumor-detection-front.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Install all required dependancies
+```
+    npm install
+```
+
+3. Run the application
+```
+    ng serve
+```

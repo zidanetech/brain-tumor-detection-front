@@ -1,0 +1,20 @@
+.uploader-cfg {
+    --ctx-name: "uploader";
+  
+    /* DO NOT FORGET TO USE YOUR OWN PUBLIC KEY */
+    --cfg-pubkey: "demopublickey";
+}
+
+
+.space {
+    height: 100vh;
+}
+
+.space > .row {
+    height: 100%;
+}
+
+
+.an {
+    transform: translateY(150%);
+}

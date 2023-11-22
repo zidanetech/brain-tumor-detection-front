@@ -1,0 +1,56 @@
+<!-- main container -->
+<div class="container-fluid space">
+    <div class="row p-5">
+        <div class="col-md-6 p-5">
+            <div class="container p-5">
+                <h1 class="text-primary"><strong>Welcome to <span style="text-decoration: underline;">Brain Tumor</span> Analysis App</strong></h1>
+                <p class="text-secondary">
+                    Select your brain x-ray
+                </p>
+                <!-- uploadcare component -->
+                <lr-file-uploader-regular
+                        class="uploader-cfg"
+                        css-src="https://unpkg.com/@uploadcare/blocks@0.24.1/web/file-uploader-regular.min.css"
+                        ctx-name="my-uploader">
+                        <lr-data-output
+                        (lr-data-output)="handleUploaderEvent($event)"
+                        use-event
+                        hidden
+                        class="uploader-cfg"
+                        ctx-name="my-uploader">
+                        </lr-data-output>
+                </lr-file-uploader-regular>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let file of files">
+                        <img src="{{ file.cdnUrl }}" width="100%" alt="" srcset="" (click)="selectImageToScanne(file)">
+                    </div>                                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 pl-4 pr-4">
+            <div class="card" style="height: 100%;">
+                <div class="card-body" align="center">
+                    <!-- Image Selected -->
+                    <img src="https://cdn.dribbble.com/users/962171/screenshots/19903686/media/87e3fc98424a1b06cf76e50b2dcaecc9.jpg?resize=1000x750&vertical=center" *ngIf="!selectedFile" width="100%" height="100%" alt="" srcset="">
+                    <img src="{{selectedFile.cdnUrl}}" *ngIf="selectedFile" width="{{selectedFile.imageInfo.width}}" height="{{selectedFile.imageInfo.height}}" alt="" srcset="">
+                </div>
+                <div class="card-body" *ngIf="false" align="center"> 
+                  <!-- Loading part -->  
+                    <div class="an">
+                        <div class="spinner-border text-primary" role="status" style="width: 5rem; height: 5rem;">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <p class="text-secondary mt-3">Analysing ...</p>
+                    </div>
+                    <!--// Loading part //--> 
+                </div>
+                <div class="card-footer" style="background-color: transparent;">
+                    <!-- Analysing Button -->
+                    <button class="btn btn-primary btn-block">Analyse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
