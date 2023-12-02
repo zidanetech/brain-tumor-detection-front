@@ -18,3 +18,18 @@
 .an {
     transform: translateY(150%);
 }
+
+.empty {
+    padding: 1rem;
+    transform: translateY(100%);
+}
+
+
+ion-icon {
+    color: rgb(0, 123, 255);
+}
+
+.details {
+    margin: 0rem;
+    transform: translateY(95%);
+}

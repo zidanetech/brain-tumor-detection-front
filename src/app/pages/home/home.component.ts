@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as LR from "@uploadcare/blocks";
+import { PredictionService } from 'src/app/services/prediction.service';
+
 
 LR.registerBlocks(LR);
 
@@ -12,8 +14,12 @@ LR.registerBlocks(LR);
 export class HomeComponent implements OnInit {
   files: any[] = [];
   selectedFile: any;
-
-  constructor() { }
+  status = {
+    loading: false,
+    error: false
+  };
+  prediction: any;
+  constructor(private predictionService: PredictionService) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +35,23 @@ export class HomeComponent implements OnInit {
 
   selectImageToScanne(file: any) {
     this.selectedFile = file;
+  }
+
+
+  lunchAnalysis() {
+    this.status.loading = true;
+    this.status.error = false;
+    this.predictionService.makePrediction({img: this.selectedFile.cdnUrl}).subscribe(
+      (s) => {
+        console.log(s);    
+        this.prediction = s;    
+        this.status.loading = false;
+      }, (e) => {
+        console.log(e);        
+        this.status.loading = false;        
+        this.status.error = true;
+      }
+    );
   }
 
 }
