@@ -1,4 +1,6 @@
 <!-- main container -->
+<img src="C:/Users/IsRa.ChaaBani/Desktop/pred/n1.tif" alt="">
+
 <div class="container-fluid space">
     <div class="row p-5">
         <div class="col-md-6 p-5">
@@ -68,8 +70,8 @@
                             <div class="row">
                                 <div class="col-md-9">
                                     <span class="text-secondary">Result : </span>
-                                    <h2 class="text-success" *ngIf="prediction.prediction == 'Y'">No presence of cancer</h2>
-                                    <h2 class="text-danger" *ngIf="prediction.prediction == 'N'">Presence of cancer</h2>
+                                    <h2 class="text-success" *ngIf="prediction.message == 'No Brain Tumor'">No presence of cancer</h2>
+                                    <h2 class="text-danger" *ngIf="prediction.message == 'Yes Brain Tumor'">Presence of cancer</h2>
 
                                 </div>
                                 <div class="col-md-3" align="center">
