@@ -38,6 +38,12 @@ export class HomeComponent implements OnInit {
   }
 
 
+  reset() {
+    this.selectedFile = undefined;
+    this.prediction = undefined;
+  }
+
+
   lunchAnalysis() {
     this.status.loading = true;
     this.status.error = false;
