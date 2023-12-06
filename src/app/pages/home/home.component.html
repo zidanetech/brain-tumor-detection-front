@@ -5,9 +5,9 @@
     <div class="row p-5">
         <div class="col-md-6 p-5">
             <div class="container p-5">
-                <h1 class="text-primary"><strong>Welcome to <span style="text-decoration: underline;">Brain Tumor</span> Analysis App</strong></h1>
+                <h1 class="text-primary"><strong>Welcome to <span style >Brain Tumor</span> Analysis App</strong></h1>
                 <p class="text-secondary">
-                    Select your brain x-ray
+                    Select your document
                 </p>
                 <!-- uploadcare component -->
                 <lr-file-uploader-regular
@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-6 pl-4 pr-4">
             <!-- Analysing card //-->
-            <div class="card" style="height: 100%;" *ngIf="!prediction">
+            <div class="card bg-light mb-3" style="height: 100%;" *ngIf="!prediction">
                 <div class="card-body" align="center" *ngIf="!status.loading">
                     <!-- Image Selected -->
                     <div class="empty" *ngIf="!selectedFile">
@@ -83,9 +83,7 @@
                         </div>
                     </div>
                     <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                          Our Result is reliable at <strong>{{ prediction.score }}%</strong>
-                        </div>
+                        
                     </div>
 
                 </div>
